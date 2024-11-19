@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fa;
+    display: flex;
+}
+
+/* Barra lateral */
+.sidebar {
+    position: fixed; /* Fija la barra lateral al lado izquierdo */
+    top: 0;
+    left: 0;
+    width: 16rem; /* Ancho de la barra lateral */
+    height: 100vh; /* Ocupa todo el alto de la ventana */
+    background-color: #1f2937; /* Color oscuro */
+    color: #ffffff; /* Color de texto blanco */
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+}
+
+.sidebar .brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Hace que el contenido crezca */
+}
+
+.sidebar ul li {
+    margin-bottom: 1rem;
+}
+
+.sidebar ul li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #374151; /* Color de hover */
+}
+
+.sidebar .logout-form {
+    margin-top: auto; /* Empuja hacia abajo el botón de logout */
+}
+
+.sidebar .logout {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    text-align: center;
+    color: #ffffff;
+    background-color: #dc2626; /* Rojo para el botón */
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar .logout:hover {
+    background-color: #b91c1c;
+}
+
+/* Área de contenido */
+.content {
+    margin-left: 16rem; /* Deja espacio para la barra lateral */
+    padding: 1.5rem;
+    min-height: 50vh; /* Asegura que el contenido ocupe toda la altura */
+    background-color: #f9fafb; /* Fondo claro */
+}
+
+

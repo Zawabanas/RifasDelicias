@@ -16,5 +16,7 @@ class Logout
 
         Session::invalidate();
         Session::regenerateToken();
+
+        redirect()->route('login')->send();
     }
 }
