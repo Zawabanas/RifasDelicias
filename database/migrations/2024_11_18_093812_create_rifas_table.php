@@ -12,6 +12,7 @@ class CreateRifasTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->text('descripcion')->nullable();
+            $table->text('cantidad_boletos');
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
             $table->decimal('precio_boleto', 8, 2);

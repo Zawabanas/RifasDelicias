@@ -18,7 +18,7 @@
             <li><a href="{{ route('clientes.index') }}" class="block py-2 px-4 hover:bg-gray-700 rounded">Clientes</a></li>
             <li><a href="{{ route('boletos.index') }}" class="block py-2 px-4 hover:bg-gray-700 rounded">Boletos</a></li>
             <li><a href="{{ route('transacciones.index') }}" class="block py-2 px-4 hover:bg-gray-700 rounded">Transacciones</a></li>
-            <li><a href="{{ route('metodos-pago.index') }}" class="block py-2 px-4 hover:bg-gray-700 rounded">Métodos de Pago</a></li>
+            <li><a href="{{ route('metodos_pago.index') }}" class="block py-2 px-4 hover:bg-gray-700 rounded">Métodos de Pago</a></li>
             <li><a href="{{ route('contactos.index') }}" class="block py-2 px-4 hover:bg-gray-700 rounded">Contacto</a></li>
         </ul>
         <form method="POST" action="{{ route('logout') }}" class="mt-6 px-4">

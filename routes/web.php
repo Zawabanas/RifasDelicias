@@ -11,12 +11,20 @@ use App\Http\Controllers\TransaccionController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Rifa;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaymentMethodsController;
+use App\Http\Controllers\TicketController;
 
 // Ruta de bienvenida
-Route::get('/', function () {
-    $rifaActiva = Rifa::where('estado', 'activa')->first(); // Obtener la primera rifa activa
-    return view('home', compact('rifaActiva'));
-});
+
+Route::get('/', [HomeController::class, 'home'])->name('home');
+
+
+Route::get('/payment_methods', [PaymentMethodsController::class, 'index'])->name('payment.methods');
+
+Route::get('/tickets', [TicketController::class, 'index'])->name('tickets');
+
+
+
 
 // Rutas protegidas por autenticación
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -26,13 +34,19 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Gestión de rifas y asociados
     Route::resource('rifas', RifaController::class);
     Route::resource('imagenes', ImagenController::class);
-    Route::resource('boletos', BoletoController::class);
+    Route::resource('boletos', BoletoController::class)->except(['destroy']);
 
 
-    Route::get('/', [HomeController::class, 'home'])->name('home');
+
     // Gestión de clientes y pagos
     Route::resource('clientes', ClienteController::class);
-    Route::resource('metodos-pago', MetodoPagoController::class);
+
+
+    Route::resource('metodos_pago', MetodoPagoController::class)->parameters([
+        'metodos_pago' => 'metodoPago'
+    ]);
+
+
     Route::resource('transacciones', TransaccionController::class);
 
     // Contacto

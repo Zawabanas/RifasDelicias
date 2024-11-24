@@ -12,223 +12,171 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Custom CSS -->
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-        }
-
-        .navbar {
-            height: 80px;
-            padding: 0;
-        }
-
-        .navbar-brand img {
-            height: 50px;
-        }
-
-        .parallax {
-            background-size: cover;
-            background-position: center;
-            height: calc(100vh - 80px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            position: relative;
-            text-align: center;
-        }
-
-        .parallax h1 {
-            z-index: 2;
-            font-size: 4rem;
-            text-align: center;
-        }
-
-        .parallax p {
-            margin-top: 20px;
-            font-size: 1.2rem;
-        }
-
-        .info-section {
-            padding: 60px 0;
-            background-color: #f8f9fa;
-        }
-
-        .info-section .info-card {
-            text-align: center;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background-color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .info-card:hover {
-            transform: scale(1.05);
-        }
-
-        .info-card img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-
-        .footer {
-            background-color: #343a40;
-            color: white;
-            padding: 40px 0;
-        }
-
-        .footer {
-        width: 100%;
-        background-color: #0a141d !important;
-    }
-
-    .footer .group-1 {
-        width: 100%;
-        max-width: 1200px;
-        margin: auto;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 50px;
-        padding: 45px 0px;
-    }
-
-    .footer .group-1 .box {
-        text-align: center;
-    }
-
-    .footer .group-1 .box figure {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .footer .group-1 .box figure img {
-        width: 250px;
-    }
-
-    .footer .group-1 .box h2 {
-        color: #fff;
-        margin-bottom: 25px;
-        font-size: 20px;
-    }
-
-    .footer .group-1 .box p {
-        color: #fff;
-        margin-bottom: 25px;
-        font-size: 15px;
-    }
-
-    .footer .group-1 .social-networks {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .footer .group-1 .social-networks a {
-        display: inline-block;
-        text-decoration: none;
-        width: 45px;
-        height: 45px;
-        line-height: 45px;
-        color: #fff;
-        margin-right: 10px;
-        background-color: #0d2033;
-        text-align: center;
-        border-radius: 50%;
-        font-size: 20px;
-    }
-
-    .footer .group-1 .social-networks a:hover {
-        color: rgb(255, 255, 255);
-    }
-
-    .footer .group-2 {
-        background-color: #0a1a2a;
-        padding: 15px 10px;
-        text-align: center;
-        color: #fff;
-    }
-
-    .footer .group-2 small {
-        font-size: 15px;
-    }
-
-        .card-details {
-            display: none;
-            text-align: left;
-            margin-top: 20px;
-        }
-
-        .info-card.active .card-details {
-            display: block;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 </head>
 
 <body>
 
     <!-- Header -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <a href="/" class="navbar-brand">
-                <img src="{{ asset('images/logo.png') }}" alt="Rifas Delicias" style="height: 10px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="#Inicio" class="nav-link">Inicio</a></li>
-                    <li class="nav-item"><a href="#about-us" class="nav-link">Cómo Participar</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contacto</a></li>
-                </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-transparent">
+            <div class="container">
+                <a href="/" class="navbar-brand d-flex align-items-center">
+                    <img src="{{ asset('images/logo.png') }}" alt="Rifas Delicias" style="height: 50px; margin-right: 10px;">
+                    <span class="font-weight-bold">Rifas Delicias</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#Inicio" class="nav-link d-flex align-items-center">
+                                <i class="fas fa-home mr-2"></i>Inicio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about-us" class="nav-link d-flex align-items-center">
+                                <i class="fas fa-info-circle mr-2"></i>Cómo Participar
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/payment_methods" class="nav-link d-flex align-items-center">
+                                <i class="fas fa-credit-card mr-2"> </i>Metodos de pago
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/tickets" class="nav-link d-flex align-items-center">
+                                <i class="fas fa-ticket-alt mr-2"></i>Boletos
+                            </a>
+                        </li>
+    
+                    </ul>
+                    
+                </div>
             </div>
         </nav>
     </header>
-
+    
     <!-- Hero Section -->
-    <section class="parallax"
+    <section id="Inicio" class="parallax"
         style="background-image: url('{{ $rifaActiva && $rifaActiva->imagenes->where('pivot.tipo', 'header')->first() ? asset('storage/' . $rifaActiva->imagenes->where('pivot.tipo', 'header')->first()->ruta) : 'https://via.placeholder.com/1200x600' }}');">
         <div>
             <h1>{{ $rifaActiva ? $rifaActiva->nombre : 'Bienvenido a Rifas Delicias' }}</h1>
             <p>¡Participa y gana premios increíbles! Cada boleto es una oportunidad.</p>
-            <a href="tickets" class="btn btn-primary btn-lg mt-4">Comprar Boletos</a>
+            <a href="tickets" class="btn btn-custom">Comprar Boletos</a>
+
         </div>
     </section>
 
     <!-- Información sobre el funcionamiento -->
+    <section id="about-us" class="how-it-works">
+        <div class="container text-center">
+            <h2 class="mb-5">¿Cómo Funciona?</h2>
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <!-- Paso 1 -->
+                <div class="how-step text-center mx-md-4">
+                    <i class="fas fa-user-plus" style="font-size: 4rem; color: #007bff;"></i>
+                    <h5 class="mt-3">Regístrate</h5>
+                    <p>Crea tu cuenta para comenzar a participar en nuestras rifas. Es sencillo y rápido.</p>
+                </div>
+                <!-- Flecha -->
+                <i class="fas fa-arrow-right d-none d-md-inline-block" style="font-size: 2rem; color: #6c757d;"></i>
+                <!-- Paso 2 -->
+                <div class="how-step text-center mx-md-4">
+                    <i class="fas fa-ticket-alt" style="font-size: 4rem; color: #ff9800;"></i>
+                    <h5 class="mt-3">Compra Boletos</h5>
+                    <p>Selecciona tus números preferidos y realiza la compra desde la plataforma.</p>
+                </div>
+                <!-- Flecha -->
+                <i class="fas fa-arrow-right d-none d-md-inline-block" style="font-size: 2rem; color: #6c757d;"></i>
+                <!-- Paso 3 -->
+                <div class="how-step text-center mx-md-4">
+                    <i class="fas fa-trophy" style="font-size: 4rem; color: #28a745;"></i>
+                    <h5 class="mt-3">Gana Premios</h5>
+                    <p>Participa en el sorteo y cruza los dedos. ¡Tu premio podría ser el próximo!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
  <!-- Información sobre el funcionamiento -->
- <section id="about-us" class="info-section">
+ <section  class="info-section">
     <div class="container">
         <h2 class="text-center mb-4">Conoce más sobre Rifas Delicias</h2>
         <div class="row">
             <!-- Cards -->
-            @foreach (['Rifas Seguras', 'Premios Increíbles', 'Soporte al Cliente', 'Fácil Participación', 'Transparencia Total', 'Entrega Garantizada'] as $title)
             <div class="col-md-4 mb-4">
                 <div class="info-card">
-                    <img src="{{ asset('images/raffle-icon.png') }}" alt="{{ $title }}">
-                    <h5>{{ $title }}</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <i class="fas fa-lock" style="font-size: 2rem; color: #007bff;"></i>
+                    <h5>Rifas Seguras</h5>
+                    <p>Participa con confianza en nuestras rifas. ¡Todo es justo y transparente!</p>
                     <i class="fas fa-chevron-down"></i>
                     <div class="card-details">
-                        <p>Detalles adicionales sobre {{ $title }}.</p>
+                        <p>Todas las rifas son gestionadas con total transparencia y basadas en sorteos oficiales. Puedes consultar los resultados y procesos en nuestras plataformas.</p>
                     </div>
                 </div>
             </div>
-            @endforeach
+            <div class="col-md-4 mb-4">
+                <div class="info-card">
+                    <i class="fas fa-trophy" style="font-size: 2rem; color: #ff9800;"></i>
+                    <h5>Premios Increíbles</h5>
+                    <p>Gana desde productos electrónicos hasta grandes sorpresas.</p>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="card-details">
+                        <p>Desde dispositivos electrónicos hasta experiencias inolvidables, nuestros premios están diseñados para brindarte emociones únicas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="info-card">
+                    <i class="fas fa-headset" style="font-size: 2rem; color: #28a745;"></i>
+                    <h5>Soporte al Cliente</h5>
+                    <p>¿Tienes dudas? Estamos para ayudarte en todo momento.</p>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="card-details">
+                        <p>Nuestro equipo de soporte está disponible a través de WhatsApp, correo y redes sociales para resolver todas tus dudas rápidamente.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="info-card">
+                    <i class="fas fa-mouse" style="font-size: 2rem; color: #6c63ff;"></i>
+                    <h5>Fácil Participación</h5>
+                    <p>Adquirir boletos nunca fue tan sencillo.</p>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="card-details">
+                        <p>Con nuestro sistema en línea, puedes elegir y comprar boletos desde la comodidad de tu hogar, de manera fácil y segura.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="info-card">
+                    <i class="fas fa-check" style="font-size: 2rem; color: #4caf50;"></i>
+                    <h5>Transparencia Total</h5>
+                    <p>Resultados claros y públicos.</p>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="card-details">
+                        <p>Los resultados de las rifas se basan en sorteos oficiales, y los ganadores son anunciados públicamente en nuestras redes sociales.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="info-card">
+                    <i class="fas fa-gift" style="font-size: 2rem; color: #e91e63;"></i>
+                    <h5>Entrega Garantizada</h5>
+                    <p>Tu premio, asegurado.</p>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="card-details">
+                        <p>Nos aseguramos de que todos los premios sean entregados directamente a los ganadores en tiempo y forma.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -266,14 +214,15 @@
         </div>
     
         <!-- Derechos Reservados -->
-        <div class="group-2 text-center py-3" style="background-color: #2c2f33; color: #fff;">
+        <div class="group-2">
             <small>© Copyright 2024 <b>Rifas Delicias</b> - Derechos reservados</small>
-            <br>
-            <a href="https://www.facebook.com/DSTUDIOVISUAL" target="_blank" class="d-inline-flex align-items-center mt-2">
-                <img src="{{ asset('images/developer-logo.jpg') }}" alt="DSTUDIOVISUAL" style="height: 40px; border-radius: 50%; object-fit: cover;">
-                <span class="ml-2">Desarrollado por DSTUDIOVISUAL</span>
+
+            <a href="https://www.facebook.com/DSTUDIOVISUAL" target="_blank" class="d-inline-flex align-items-center">
+                <img src="{{ asset('images/developer-logo.jpg') }}" alt="DSTUDIOVISUAL">
+                Desarrollado por DSTUDIOVISUAL
             </a>
         </div>
+        
     </footer>
     
     
@@ -281,6 +230,10 @@
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
     <script>
         document.querySelectorAll('.info-card').forEach(card => {
             card.addEventListener('click', () => {
@@ -288,6 +241,37 @@
             });
         });
     </script>
+    
+    <script>
+        document.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled'); // Agregar clase cuando se hace scroll
+            } else {
+                navbar.classList.remove('scrolled'); // Eliminar clase al regresar arriba
+            }
+        });
+    </script>
+
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const offset = -50; // Ajusta el desplazamiento si el header cubre parte de la sección
+                const position = target.offsetTop + offset;
+
+                window.scrollTo({
+                    top: position,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+
+    
 </body>
 
 </html>

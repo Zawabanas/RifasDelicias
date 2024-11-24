@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('metodos_pago', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre_metodo');
+            $table->enum('nombre_metodo', ['transferencias bancarias', 'depositos en tiendas de servicios'])
+                ->comment('Tipos de métodos de pago permitidos');
+            $table->string('banco')->nullable();
+            $table->string('propietario_cuenta')->nullable();
+            $table->string('numero_tarjeta')->nullable();
+            $table->string('clabe')->nullable();
             $table->text('detalles')->nullable();
             $table->enum('estado', ['activo', 'inactivo'])->default('activo');
             $table->timestamps();
@@ -23,8 +28,8 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('metodos__pagos');
+        Schema::dropIfExists('metodos_pago');
     }
 };

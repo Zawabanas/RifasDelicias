@@ -1,0 +1,397 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar toggler (botón) */
+body.payment-methods .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.8); /* Borde oscuro para visibilidad */
+}
+
+body.payment-methods .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0, 0, 0, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Cambiar color al scrollear */
+body.payment-methods .navbar.fixed-top.scrolled .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+body.payment-methods .navbar.fixed-top.scrolled .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.8); /* Borde blanco al hacer scroll */
+}
+
+
+
+
+
+/* Estilos para la vista de payments */
+body.payment-methods .navbar.bg-transparent .nav-link,
+body.payment-methods .navbar.bg-transparent .navbar-brand {
+    color: rgb(0, 0, 0) !important; /* Texto negro cuando no está scrolleado */
+}
+
+body.payment-methods .navbar.fixed-top.scrolled .nav-link,
+body.payment-methods .navbar.fixed-top.scrolled .navbar-brand {
+    color: rgb(255, 255, 255) !important; /* Texto blanco cuando está scrolleado */
+}
+
+body.payment-methods .navbar.fixed-top.scrolled {
+    background-color: rgb(184, 48, 48) !important; /* Fondo oscuro con scroll */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Animación suave */
+}
+
+body.payment-methods .navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición para smooth scroll */
+}
+
+/* Ajuste adicional para el espacio superior */
+body.payment-methods {
+    padding-top: 80px; /* Espacio adicional para evitar que el header se solape con el contenido */
+}
+
+
+/* Navbar Styles */
+.navbar {
+    padding: 1rem 0;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 10;
+}
+
+.navbar.bg-transparent .nav-link {
+    color: rgb(255, 255, 255) !important; /* Cambiado a negro */
+}
+
+.navbar.bg-transparent .navbar-brand {
+    color: rgb(255, 255, 255) !important; /* Cambiado a negro */
+}
+
+.navbar.fixed-top.scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+    color: rgb(119, 22, 22);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffffff;
+}
+
+.navbar.scrolled {
+    background-color: rgb(184, 48, 48) !important;
+    box-shadow: 0 4px 6px rgba(255, 5, 5, 0.1);
+}
+
+.navbar.scrolled .nav-link {
+    color: white;
+    text-shadow: none;
+}
+
+.navbar.scrolled .navbar-brand {
+    color: rgb(255, 255, 255) !important;
+}
+
+
+.navbar-brand img {
+    height: 50px;
+}
+
+@media (max-width: 576px) {
+    .navbar-brand img {
+        height: 40px;
+    }
+}
+
+/* Mejora en la imagen de fondo */
+.parallax {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+.parallax h1 {
+    font-size: 3.5rem;
+    margin: 0;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.parallax p {
+    font-size: 1.2rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .parallax h1 {
+        font-size: 2.5rem;
+    }
+    .parallax p {
+        font-size: 1rem;
+    }
+}
+
+/* ¿Cómo Funciona? */
+.how-it-works {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.how-it-works h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #333;
+}
+
+.how-it-works i {
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.how-it-works h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.how-it-works p {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.how-it-works i:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .how-it-works {
+        padding: 40px 20px;
+    }
+
+    .how-it-works h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .how-it-works h5 {
+        font-size: 1.2rem;
+    }
+
+    .how-it-works p {
+        font-size: 0.9rem;
+    }
+
+    .how-it-works .fa-arrow-right {
+        display: none;
+    }
+}
+
+/* Botón personalizado */
+.btn-custom {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-custom:hover {
+    background-color: #c82333;
+    color: #fff;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 576px) {
+    .btn-custom {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+}
+
+/* Info Section Styles */
+.info-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.info-section .info-card {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.info-card:hover {
+    transform: scale(1.05);
+}
+
+.info-card i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.info-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 576px) {
+    .info-card {
+        padding: 15px;
+    }
+
+    .info-card h5 {
+        font-size: 1rem;
+    }
+
+    .info-card p {
+        font-size: 0.8rem;
+    }
+}
+
+.card-details {
+    display: none;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.info-card.active .card-details {
+    display: block;
+}
+
+
+/* Footer Styles */
+.footer {
+    width: 100%;
+    background-color: #0a141d !important;
+}
+
+.footer .group-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+
+.footer .group-1 .box {
+    text-align: center;
+}
+
+.footer .group-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .group-1 .box figure img {
+    width: 250px;
+}
+
+.footer .group-1 .box h2 {
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.footer .group-1 .box p {
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+.footer .group-1 .social-networks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .group-1 .social-networks a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #0d2033;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.footer .group-1 .social-networks a:hover {
+    color: rgb(255, 255, 255);
+}
+
+.footer .group-2 {
+    background-color: #0a1a2a;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer .group-2 a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.footer .group-2 a:hover {
+    color: #ffc107;
+}
+
+.footer .group-2 img {
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    .footer .group-1 {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer .group-2 {
+        flex-direction: column;
+    }
+}
